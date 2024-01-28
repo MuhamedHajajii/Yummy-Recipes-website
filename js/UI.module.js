@@ -36,3 +36,5 @@ $(".mainSideBar > ul li").on("click", function () {
   $("#sidebarClose").css("display", "none");
   $("#details").css("display","none")
 });
+
+

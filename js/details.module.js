@@ -5,21 +5,19 @@ export function getAllIds() {
     $(".layerBox").fadeOut(300);
   });
 }
-
 async function getDetails(id) {
   $("#contentSearch").addClass("d-none");
   let response = await (
     await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
   ).json();
-  displayDetails(response.meals[0]);
+  displayDetails(response.meals[0],id);
 }
-
 let Resipes = "";
 let strIngredient = [];
 let strMeasure = [];
 let tags = "";
 
-export function displayDetails(currentMeal) {
+export function displayDetails(currentMeal,id) {
   strIngredient = [];
   strMeasure = [];
   tags = "";
@@ -74,6 +72,10 @@ export function displayDetails(currentMeal) {
     <div class="col-12 col-md-4 mb-3">
       <img class="w-100 rounded-2 mb-2 d-block" src="${strMealThumb}" alt="${strMeal}">
       <h2 class="text-capitalize m-0">${strMeal}</h2>
+      <div class="text-center d-flex justify-content-between mt-3">
+      <button id="prevBtn" class="d-block btn btn-outline-dark px-3 py-2 text-white"><i class="fa-solid fa-angles-left"></i></button>
+      <button id="nextBtn" class="d-block btn btn-outline-dark px-3 py-2 text-white"><i class="fa-solid fa-angles-right"></i></button>
+    </div>
     </div>
     <hr class="d-block d-md-none border-4" />
     <div class="col-12 col-md-8">
@@ -103,4 +105,41 @@ export function displayDetails(currentMeal) {
     $("#details").css("display", "none");
     $("#contentSearch").removeClass("d-none");
   });
+  sliderBtns(id)
 }
+
+function sliderBtns(id) {
+  let nextIteration = id; 
+  $("#nextBtn").on('click',function(){
+    if ($(`[data-id-col=${id}]`).nextAll().eq(0).attr("data-id-col")) {
+      let currentId = $(`[data-id-col=${id}]`).nextAll().eq(0).attr("data-id-col")
+    getDetails(currentId)
+    } else {
+      $("#nextBtn").css({"cssText":`cursor:not-allowed;background:rgba(255,0,0,0.7);`}).addClass("disabledBtn")
+    }
+  })
+  $("#prevBtn").on('click',function(){
+    if ($(`[data-id-col=${id}]`).prevAll().eq(0).attr("data-id-col") != null) {
+      let currentId = $(`[data-id-col=${id}]`).prevAll().eq(0).attr("data-id-col")
+      getDetails(currentId)
+    } else {
+      $("#prevBtn").css({"cssText":`cursor:not-allowed;background:rgba(255,0,0,0.7);`}).addClass("disabledBtn")
+    }
+  })
+}
+
+
+$("#darkMoodAlret").on("click",function(){
+  $("#darkMoodAlret").addClass("d-none")
+  $("#lightMoodAlret").removeClass("d-none")
+  $(".light").slideDown()
+  $(".dark").slideUp()
+
+})
+$("#lightMoodAlret").on("click",function(){
+  $("#lightMoodAlret").addClass("d-none")
+  $("#darkMoodAlret").removeClass("d-none")
+  $(".light").slideUp()
+  $(".dark").slideDown()
+
+})

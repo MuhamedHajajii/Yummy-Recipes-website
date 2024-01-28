@@ -56,7 +56,14 @@
         </div>
       </div>
       <div class="py-4 px-2 d-flex flex-column justify-content-between align-items-center bg-white text-black sliderBar">
-        <div><img src="./images/logo.png" alt=""></div>
+        <div class="logoContainer position-relative">
+          <img class="light w-100 position-absolute" src="./images/logo.png" alt="">
+          <img class="dark w-100 position-absolute" src="./images/logoDark.png" alt="logoDark">
+          <div  >
+            <p id="darkMoodAlret" class="d-none badge bg-secondary position-absolute d-flex flex-column"><span class="mb-2">Dark Mode</span><i class="text-black fa-solid fa-moon"></i></p>
+            <p id="lightMoodAlret" class=" badge bg-white text-black position-absolute d-flex flex-column"><span class="mb-2">light Mood</span><i class="text-warning fa-solid fa-sun"></i></p>
+          </div>
+        </div>
         <div>
           <i id="sidebarClose" role="button" class="fa-solid open-close-icon fa-2x fa-x"></i>
           <i id="sidebarOpen" role="button" class="fa-solid open-close-icon fa-2x fa-align-justify"></i>

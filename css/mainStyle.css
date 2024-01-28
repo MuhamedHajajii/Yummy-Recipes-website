@@ -82,4 +82,76 @@ aside footer p {
 #details {
   display: none;
 }
+#nextBtn,#prevBtn {
+  transition:all 0.3s;
+}
+.disabledBtn{
+  animation: animateDisabledBtn 0.3s;
+}
+@keyframes animateDisabledBtn {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+    
+  }
+  50% {
+    transform: scale(1);
+    
+  }
+  100% {
+    transform: scale(1.1);
+
+  }
+}
+.light {
+  left: 0;
+  top: 0;
+}
+.dark {
+  left: 0;
+  top: 0;
+  display: none;
+}
+.logoContainer {
+  width: 50px;
+  height: 80px;
+  cursor: pointer;
+}
+.logoContainer:hover img{
+  animation: logoHover 0.5s alternate infinite,logoUp forwards 0.5s;
+}
+@keyframes logoHover {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+    
+  }
+  100% {
+    
+    transform: rotate(-10deg);
+  }
+}
+@keyframes logoUp {
+  from {
+    top: 0;
+  }
+  to {
+    top: -10px;
+  }
+}
+#darkMoodAlret,#lightMoodAlret {
+  bottom: -40%;
+  left: 0;
+  transition: 0.5s;
+  font-size: 10px;
+}
+
+.logoContainer:hover #darkMoodAlret,.logoContainer:hover #lightMoodAlret{
+  bottom: -50%;
+
+}
 /* End Details */
