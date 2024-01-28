@@ -1,0 +1,85 @@
+/* Start Global */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+/* End Global */
+
+/* Start Main section */
+.col {
+  cursor: pointer;
+}
+.col .layer {
+  background-color: #f9f6f6ca;
+  top: 100%;
+  transition: 0.5s all;
+}
+.col:hover .layer {
+  top: 0;
+}
+
+.layerBox {
+  z-index: 999;
+  display: none;
+}
+.first {
+  z-index: 999999;
+}
+/* End Main section */
+
+/* Start sideBar */
+.mainSideBar > ul li i {
+  opacity: 0;
+  transition: all 0.3s;
+}
+.mainSideBar ul li:hover i {
+  opacity: 1;
+}
+aside img {
+  width: 50px;
+}
+aside {
+  z-index: 9999;
+}
+aside #mainSideBar {
+  background-color: #0d0d0d;
+}
+
+#sidebarClose {
+  display: none;
+}
+aside footer p {
+  white-space: nowrap;
+}
+#mainSideBar .mainSideBar > ul li {
+  top: 300px;
+}
+#mainSideBar .mainSideBar > ul li {
+  transition: 0.3s all;
+}
+#mainSideBar .mainSideBar > ul li:hover {
+  color: yellow;
+  margin-left: 10px;
+}
+/* End sideBar */
+/* Start Search Inputs */
+.searchInputs {
+  display: none;
+}
+#searchInputs input:focus {
+  caret-color: white;
+}
+
+.search::placeholder {
+  color: rgba(255, 255, 255, 0.495);
+  font-weight: 400;
+}
+#errorMesage {
+  opacity: 0;
+}
+/* End Search Inputs */
+
+/* start Details */
+#details {
+  display: none;
+}
+/* End Details */

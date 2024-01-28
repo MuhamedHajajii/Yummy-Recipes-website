@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yummy</title>
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
+  <!-- Start BootStrap -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <!-- start FontAwesome -->
+  <link rel="stylesheet" href="./css/all.min.css">
+  <!-- Start Main StyleSheet -->
+  <link rel="stylesheet" href="./css/mainStyle.css">
+  <!-- start sweet alert -->
+  <link rel="stylesheet" href="./css/sweetalert2.min.css">
+</head>
+
+<body class="bg-black">
+  <!-- Start lazy Loading -->
+  <div
+    class="first text-white justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 bg-black">
+    <div class="position-absolute top-50 start-50 translate-middle">
+      <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div>
+  </div>
+  <!-- End lazy Loading -->
+  <!-- Start Aside -->
+  <div class="container">
+    <aside id="aside" class="text-white d-flex position-fixed top-0 bottom-0">
+      <div id="mainSideBar">
+        <div class="mainSideBar slides p-4 h-100 d-flex flex-column justify-content-between">
+          <ul class="list-unstyled text-capitalize overflow-hidden">
+            <li role="button" class="position-relative py-2"><span>search</span> <i
+                class="fa-solid fa-angle-right fa-sm"></i></li>
+            <li id="categories" role="button" class="position-relative py-2"><span>categories</span> <i
+                class="fa-solid fa-angle-right fa-sm"></i></li>
+            <li id="area" role="button" class="position-relative py-2"><span>area</span> <i
+                class="fa-solid fa-angle-right fa-sm"></i></li>
+            <li id="ingredients" role="button" class="position-relative py-2"><span>ingredients</span> <i
+                class="fa-solid fa-angle-right fa-sm"></i></li>
+            <li id="contactUs" role="button" class="position-relative py-2"><span>contact us</span> <i
+                class="fa-solid fa-angle-right fa-sm"></i></li>
+          </ul>
+          <div class="mainSideCP">
+            <ul class="list-unstyled d-flex mb-1 ">
+              <li role="button" class="pe-1"><i class="fa-brands fa-facebook"></i></li>
+              <li role="button" class="px-1"><i class="fa-brands fa-twitter"></i></li>
+              <li role="button" class="px-1"><i class="fa-solid fa-globe"></i></li>
+            </ul>
+            <footer>
+              <p>Copyright Â© 2019 All Rights <br />
+                Reserved.</p>
+            </footer>
+          </div>
+        </div>
+      </div>
+      <div class="py-4 px-2 d-flex flex-column justify-content-between align-items-center bg-white text-black sliderBar">
+        <div><img src="./images/logo.png" alt=""></div>
+        <div>
+          <i id="sidebarClose" role="button" class="fa-solid open-close-icon fa-2x fa-x"></i>
+          <i id="sidebarOpen" role="button" class="fa-solid open-close-icon fa-2x fa-align-justify"></i>
+        </div>
+        <div>
+          <i role="button" class="fa-solid fa-globe d-block"></i>
+          <i role="button" class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </aside>
+    <!-- End Aside -->
+    <!-- Start Main -->
+    <section class="py-5 position-relative ">
+      <div class="container">
+        <div class="searchInputs">
+          <p id="errorMesage" class="text-danger text-center">cannot find recipes with this name <i
+              class="fa-regular fa-circle-xmark"></i></p>
+          <div id="searchInputs" class="d-md-flex mb-4 gap-3">
+            <input id="searchByName" class="text-white bg-black search form-control mb-3 mb-md-0 "
+              placeholder="Search By Name" type="text">
+            <input maxlength="1" id="searchByF" class="text-white bg-black search form-control "
+              placeholder="Search By First Letter" type="text">
+          </div>
+        </div>
+        <div class="position-relative">
+          <!-- Start lazy Loading -->
+          <div
+            class="layerBox text-white justify-content-center align-items-center position-absolute top-0 start-0 w-100 min-vh-100 bg-black">
+            <div class="position-absolute top-50 start-50 translate-middle">
+              <i class="fa fa-spinner fa-spin fa-5x"></i>
+            </div>
+          </div>
+          <!-- End lazy Loading -->
+          <!-- Start Meals Display Area -->
+          <div id="contentSearch" class="row ps-sm-5 p-5 p-md-0 g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 position-relative">
+  
+          </div>
+          <!-- End Meals Display Area -->
+          <!-- Detials -->
+          <div id="details"></div>
+          <!-- End Detials -->
+  
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End Main -->
+
+
+  <!-- Start jQuery -->
+  <script src="./js/jquery-3.7.1.min.js"></script>
+  <!-- Start BootStrap -->
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- Start SweetAlert js -->
+  <script src="./js/sweetalert2.all.min.js"></script>
+  <!-- Start main JavaScript Sheet -->
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>
